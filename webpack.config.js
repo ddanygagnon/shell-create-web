@@ -32,4 +32,8 @@ module.exports = {
   devServer: {
     static: ['./dist', './pages'],
   },
+
+  resolve: {
+    extensions: ['.js', '.ts']
+  }
 };

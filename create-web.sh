@@ -76,3 +76,4 @@ echo "Standard version done"
 
 git add --all
 git commit -m "build(*): full build process from personal shell script"
+
