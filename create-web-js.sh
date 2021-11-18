@@ -2,11 +2,10 @@
 
 gitContent=$(cat ~/dev/proj/.gitignore)
 prettierContent=$(cat ~/dev/proj/.prettierrc.json)
-eslintContent=$(cat ~/dev/proj/typescript/.eslintrc.js)
-babelContent=$(cat ~/dev/proj/typescript/.babelrc)
+eslintContent=$(cat ~/dev/proj/javascript/.eslintrc.js)
+babelContent=$(cat ~/dev/proj/javascript/.babelrc)
 webpackContent=$(cat ~/dev/proj/webpack.config.js)
 htmlContent=$(cat ~/dev/proj/index.html)
-tsconfigContent=$(cat ~/dev/proj/typescript/tsconfig.json)
 mitContent=$(cat ~/dev/proj/MIT.txt)
 
 mkdir "$1"
@@ -19,12 +18,12 @@ git commit -m "initial commit ✨"
 yarn init -y
 
 mkdir "src" "tests"
-touch "src/index.ts" "tests/index.test.ts"
+touch "src/index.js" "tests/index.test.js"
 
 echo "Setup done"
 
 # Devs
-yarn add -D husky prettier typescript @types/node eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-google @babel/core @babel/preset-env @babel/preset-typescript babel-loader webpack webpack-cli webpack-dev-server html-webpack-plugin jest ts-jest @types/jest standard-version
+yarn add -D husky prettier @types/node eslint eslint-config-google @babel/core @babel/preset-env babel-loader webpack webpack-cli webpack-dev-server html-webpack-plugin jest @types/jest
 # Commitizen
 commitizen init cz-conventional-changelog --yarn --dev --exact
 echo "Commitizen done"
@@ -64,10 +63,6 @@ echo "Webpack done"
 # Jest
 yarn ts-jest config:init
 echo "Jest done"
-
-# Standard version
-npm set-script release "standard-version"
-echo "Standard version done"
 
 echo "$mitContent" > "LICENSE"
 

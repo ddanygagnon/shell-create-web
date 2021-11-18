@@ -4,7 +4,7 @@
 - eslint
 - husky
 - prettier
-- typescript
+- typescript or javascript
 - babel
 - jest
 - standard-version
